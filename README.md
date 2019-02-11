@@ -33,7 +33,9 @@ Query Times:
 
 ## Run it
 
-To run it you need to have Go >= 1.11 as it uses Go modules. So pull the repo into some path that is not in your GOPATH (if you have it). Then just run `go build` to get the binary. Dependencies are not vendored so you need a working Internet connection to get started. Once you have the binary, all you need is to run `csvomatic -workers 2 -input pathto.csv`  to run it.
+To run it you need to have Go >= 1.11 as it uses Go modules. So pull the repo into some path that is not in your GOPATH (if you have it). Then just run `go build` to get the binary. Dependencies are not vendored so you need a working Internet connection to get started. 
+
+Once you have the binary, all you need is to run `csvomatic -workers 2 -input pathto.csv`  to run it.
 
 ### Configure the connection to the database
 
@@ -45,9 +47,11 @@ To connect to a database you need to pass the needed configuration. To do so you
 | Port | DB_PORT | 5432 |
 | Username | DB_USER | postgres |
 | Password | DB_PASSWORD | password |
-| Database | DB_NAME | homeworkd |
+| Database | DB_NAME | homework |
 
 So far no SSL connections supported.
+
+If you want to run it with env vars you can also do something like:
 
 ```
 $ DB_HOST="somehost" DB_PASSWORD="mypass" DB_NAME="myDB" ./csvomatic -input myfile.csv
